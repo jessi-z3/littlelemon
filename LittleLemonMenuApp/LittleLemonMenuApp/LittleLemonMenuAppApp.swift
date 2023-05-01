@@ -1,20 +1,17 @@
 //
-//  LittleLemonMenuAppApp.swift
-//  LittleLemonMenuApp
+//  LittleLemonApp.swift
+//  LittleLemon
 //
-//  Created by Jessi Zimmerman on 4/28/23.
+//  Created by Jessi Zimmerman on 4/23/23.
 //
 
 import SwiftUI
 
 @main
-struct LittleLemonMenuAppApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct LittleLemonApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            Onboarding()
         }
     }
 }

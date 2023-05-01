@@ -17,15 +17,23 @@ struct UserProfile: View {
 
     var body: some View {
         VStack{
-            Text("Personal Information")
-            Image("profile-image-placeholder")
-            Text(firstName ?? "")
-            Text(lastName ?? "")
-            Text(email ?? "")
+            HStack{
+                Text("Personal Information").font(Font.custom("MarkaziText-Medium", size: 40)).frame(alignment: .leading)
+            }
+            VStack(alignment: .leading){
+                Image("profile-image-placeholder").resizable().scaledToFit()
+                    .frame(height: 250).padding(.vertical)
+                Text("First:" + (firstName ?? "")).font(.custom("Karla-Regular_Bold", size: 18))
+                Text("Last:" + (lastName ?? "")).font(.custom("Karla-Regular_Bold", size: 18))
+                Text("Email:" + (email ?? "")).font(.custom("Karla-Regular_Bold", size: 18))
+            }
+            Spacer()
             Button("Logout"){
                 UserDefaults.standard.set(false, forKey: kIsLoggedIn)
                 self.presentation.wrappedValue.dismiss()
             }
+            .background(RoundedRectangle(cornerRadius: 8).fill(Color("llyellow")).frame(width: 150, height: 40))
+            .foregroundColor(Color("llblack"))
             Spacer()
         }
     }

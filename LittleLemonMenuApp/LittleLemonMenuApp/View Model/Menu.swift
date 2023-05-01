@@ -59,7 +59,7 @@ struct Menu: View {
                     TextField("Search menu", text: $searchText)
                         .textFieldStyle(.roundedBorder)
                 }
-                .padding()
+                .padding(5)
                 .background(Color("llgreen"))
                 HStack{
                     Text("ORDER FOR DELIVERY!")
@@ -73,7 +73,7 @@ struct Menu: View {
                 .padding(.top)
                 .padding(.leading)
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
+                    HStack(spacing: 10) {
                         Toggle("Starters", isOn: $startersIsEnabled)
                         Toggle("Mains", isOn: $mainsIsEnabled)
                         Toggle("Desserts", isOn: $dessertsIsEnabled)

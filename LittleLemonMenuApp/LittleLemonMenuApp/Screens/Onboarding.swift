@@ -24,15 +24,19 @@ struct Onboarding: View {
                 NavigationLink(destination: Home(), isActive: $isLoggedIn){
                     EmptyView()
                 }
-                Text("Welcome")
-                    .foregroundColor(Color("llyellow"))
-                    .font(.title)
+                
 
+
+                Text("Welcome")
+                    .font(Font.custom("MarkaziText-Medium", size: 60)).padding(.top).frame(width: 390, height: 30)
+                    .foregroundColor(Color("llyellow"))
+                Spacer()
+                Hero()
                 Spacer()
                 TextField("First Name", text: $firstName)
-                    .background(RoundedRectangle(cornerRadius: 8).fill(Color("llwhite")).frame(width: 325, height: 40)).padding(10);
-                TextField("Last Name", text: $lastName).background(RoundedRectangle(cornerRadius: 8).fill(Color("llwhite")).frame(width: 325, height: 40)).padding(10)
-                TextField("Email", text: $email).textContentType(.emailAddress).background(RoundedRectangle(cornerRadius: 8).fill(Color("llwhite")).frame(width: 325, height: 40)).padding(10)
+                    .textFieldStyle(.roundedBorder).padding(.horizontal)
+                TextField("Last Name", text: $lastName).textFieldStyle(.roundedBorder).padding(.horizontal)
+                TextField("Email", text: $email).textFieldStyle(.roundedBorder).padding(.horizontal)
                 Spacer()
                 Button("Register") {
                     pressed = true

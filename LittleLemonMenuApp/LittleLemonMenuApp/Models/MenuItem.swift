@@ -7,11 +7,19 @@
 
 import Foundation
 
-struct MenuItem: Decodable {
+struct MenuItem: Codable, Identifiable {
+    var id = UUID()
     let title: String
     let price: String
     let image: String
     let category: String
     let dishDescription: String
-    let id: UUID
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case dishDescription = "description"
+        case price = "price"
+        case image = "image"
+        case category = "category"
+    }
 }
